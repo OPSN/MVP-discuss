@@ -22,3 +22,11 @@ For the time being, this repository can serve as a place to discuss an initial "
 (Once we're actually building software, we'll do that in other repos and link to them from here.)
 
 Note that everything contributed to this repo falls under the **Apache license**, version 2.0. In particular, that means that **if you suggest any ideas** in this repository, **you're granting everyone the right** to use any patents you might own, now or in the future, which are necessary for practicing those ideas. (Or at least that's how I understand it -- correct me if I'm wrong! And if I'm wrong, then I'm hereby adding that condition to this repo's license.)
+
+## TEMPORARY additional comments about older version of this repo:
+
+Some of this content started life in an older repo, oresmus/OPSN. I've copied and improved this readme, and re-created the first 4 issues and my initial comments on them. 
+
+I'm hoping we'll copy the remaining issue discussion (or maybe paraphrase it), preserving all 7 issue numbers and who made each issue and comment, and from then on use only this newer repo.
+
+After this repo gets cleaned up and stabilized enough for new issues and comments, we can announce it to the G+ community related to OPSN.
