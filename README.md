@@ -1,5 +1,5 @@
 # MVP-discuss
-A place to design a proof of concept implementation of Overlaid Personal Semantic Networks. (For what that is, see below.)
+A place to design a proof-of-concept implementation of Overlaid Personal Semantic Networks. (For what that is, see below.)
 
 To prove the concept, an implementation of it has to be useful -- it should be a "minimum viable product". 
 
