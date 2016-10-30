@@ -29,4 +29,4 @@ Some of this content started life in an older repo, oresmus/OPSN. I've copied an
 
 I'm hoping we'll copy the remaining issue discussion (or maybe paraphrase it), preserving all 7 issue numbers and who made each issue and comment, and from then on use only this newer repo.
 
-After this repo gets cleaned up and stabilized enough for new issues and comments, we can delete these "temporary comments" from this readme, and announce the new repo (and github organization) to the G+ community related to OPSN.
+After this repo gets cleaned up and stabilized enough for new issues and comments, we can delete these "temporary comments" from this readme, and announce the new repo (and github organization) to the G+ community related to OPSN. (We can also delete the unused fork OPSN/OPSN, and I will also delete oresmus/OPSN unless we decide to refer to some of its comments rather than copying them.)
