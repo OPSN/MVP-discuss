@@ -23,10 +23,10 @@ For the time being, this repository can serve as a place to discuss an initial "
 
 Note that everything contributed to this repo falls under the **Apache license**, version 2.0. In particular, that means that **if you suggest any ideas** in this repository, **you're granting everyone the right** to use any patents you might own, now or in the future, which are necessary for practicing those ideas. (Or at least that's how I understand it -- correct me if I'm wrong! And if I'm wrong, then I'm hereby adding that condition to this repo's license.)
 
-## TEMPORARY additional comments about older version of this repo:
+## TODO
 
-Some of this content started life in an older repo, oresmus/OPSN. I've copied and improved this readme, and re-created the first 4 issues and my initial comments on them. 
+- delete the "failed repo fork" OPSN/OPSN (if JM agrees)
 
-I'm hoping we'll copy the remaining issue discussion (or maybe paraphrase it), preserving all 7 issue numbers and who made each issue and comment, and from then on use only this newer repo.
+- delete the "old repo" oresmus/OPSN, once we're sure it's no longer needed
 
-After this repo gets cleaned up and stabilized enough for new issues and comments, we can delete these "temporary comments" from this readme, and announce the new repo (and github organization) to the G+ community related to OPSN. (We can also delete the unused fork OPSN/OPSN, and I will also delete oresmus/OPSN unless we decide to refer to some of its comments rather than copying them.)
+- After Bruce returns from a conference, announce this repo (and its github organization) to the G+ community related to OPSN.
