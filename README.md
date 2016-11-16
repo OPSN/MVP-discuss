@@ -25,8 +25,6 @@ Note that everything contributed to this repo falls under the **Apache license**
 
 ## TODO
 
-- delete the "failed repo fork" OPSN/OPSN (if JM agrees)
+- When it would be useful, announce this repo (and its github organization) to the G+ community related to OPSN.
 
-- delete the "old repo" oresmus/OPSN, once we're sure it's no longer needed
-
-- After Bruce returns from a conference, announce this repo (and its github organization) to the G+ community related to OPSN.
+- Decide whether we should be using github projects and wiki pages, instead of issues, for some of this design discussion.
