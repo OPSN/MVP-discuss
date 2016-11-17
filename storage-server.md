@@ -1,9 +1,7 @@
-SYNTAX BUGS IN THIS FILE: 
+### SYNTAX BUGS IN THIS FILE: 
 - the latter part of this file is not yet in markdown syntax.
 - @oresmus is not a link.
 - named subheaders would be useful.
-
-Original author: @oresmus
 
 ==
 
@@ -17,7 +15,7 @@ Basic idea: basically just a filesystem, which the owner can write (with an effi
 
 ==
 
-OWNER permissions:
+### OWNER permissions:
 
 Needed:
 - PUT (write new contents for a file, atomically)
@@ -37,7 +35,7 @@ Optional:
 
 ==
 
-READER permissions:
+### READER permissions:
 - read any file given its name
   (standard file extensions control its mimetype, as in a typical web server)
 - but nothing else (in particular, no directory listings)
@@ -47,7 +45,7 @@ Optional reader permissions:
 
 ==
 
-Nature of access:
+### Nature of API access:
 - OWNER needs an HTTP API or equivalent (with a secret key for authorization, used over HTTPS)
 - READER could either use an HTTP API (ideal for some purposes), or just GET from a web address (ideal for other purposes), or both
   - note that GET from a web address doesn't imply the presence of an ordinarily-browseable website,
@@ -57,7 +55,8 @@ Current thoughts about implementation: one 'grain' in Sandstorm.io, using one HT
 
 ==
 
-Everything else about OPSN is done by conventions followed by writers and readers. 
+### The rest is handled by convention
+Everything else about OPSN is implemented by conventions followed by writers and readers of the stored data. 
 (That way, during development, we might often change the convention, but would rarely have to modify the server code.)
 
 For example:
@@ -73,29 +72,29 @@ For example:
 
 ==
 
-Possible specific convention:
+### Possible specific convention:
 
-README.txt - for people
-index.html - for anyone browsing there by accident, tells them what you want the public to know about the right way to read it
-README-MACHINE.txt - for programs -- gives machine-readable format description (at least format version) of entire directory
-MANIFEST? INDEX? - for reader programs - list of pathnames readers need to know but would not guess (more or less)
+- README.txt - for people
+- index.html - for anyone browsing there by accident, tells them what you want the public to know about the right way to read it
+- README-MACHINE.txt - for programs -- gives machine-readable format description (at least format version) of entire directory
+- MANIFEST? INDEX? - for reader programs - list of pathnames readers need to know but would not guess (more or less)
 
-blob/<hash> - a long blob (maybe include length in name? plus optional file extension, which reader needs to know in advance)
+- blob/\<hash> - a long blob (maybe include length in name? plus optional file extension, which reader needs to know in advance)
 - we might need a way of splitting into subdirs if the main dir gets too long;
   - it'd be nice if the underlying filesystem could do this (remain efficient for huge directories)
   - if it doesn't, maybe the storage server itself should?
 
-news/<date or uuid or nickname> - an appendable "log" of changes to an OPSN graph, with conventions for which ones to read
+- news/\<date or uuid or nickname> - an appendable "log" of changes to an OPSN graph, with conventions for which ones to read
 
-private/<unguessable>/ - subdirectory for blob/ and news/ in private channels
+- private/\<unguessable>/ - subdirectory for blob/ and news/ in private channels
 
-topic/<name>/ - subdirectory -- not needed except to optimize for readers who don't care about a large subtopic
+- topic/\<name>/ - subdirectory -- not needed except to optimize for readers who don't care about a large subtopic
 
 And more, not yet designed here (unless part of news?), for very small very mutable data, like weights and other metainfo
 
 ==
 
-Advantages of that scheme:
+### Advantages of this scheme:
 - the server is simpler
   - thus easier to write, debug, and port to other languages or hosts
   - it needs no database, just the filesystem
@@ -107,7 +106,7 @@ Advantages of that scheme:
   or any other shared filesystem,
   so porting OPSN clients to totally different kinds of servers is also easier.
 
-Disadvantages:
+### Disadvantages:
 - there are useful things the server can't do, like
   - validate hashes
   - recover gracefully from interrupted write-connections, or even notice errors caused by those
