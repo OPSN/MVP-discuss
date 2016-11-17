@@ -1,12 +1,12 @@
-BUGS: this file is not yet in markdown syntax.
+BUGS: this file is not yet in markdown syntax. Specific errors: @oresmus is not a link.
 
 ==
 
-This will contain my (@oresmus) current thoughts about one simple way to implement (and define) an OPSN server,
+This will contain my (@oresmus) current thoughts about one simple way to define and implement an OPSN server,
 or more specifically a "pool storage server" or just "OPSN storage server",
 which does nothing but store stuff for one user, with read permissions to be granted as a unit (all or nothing).
 
-Basic idea: basically just a filesystem, which the owner can write (incl append) and readers can only read.
+Basic idea: basically just a filesystem, which the owner can write (with an efficient append operation) and readers can only read.
 
 (The owner can effectively control everything about it, roughly like for a filesystem they own.)
 
@@ -18,7 +18,7 @@ Needed:
 - PUT (write new contents for a file, atomically)
 - DELETE (remove a file)
 - GET (retrieve file contents)
-- efficient APPEND (not a standard part of HTTP, so we'll have to use some kind of POST)
+- efficient APPEND (not a standard part of HTTP, so in an HTTP API we'd use a POST operation)
   - this should be atomic, which is difficult to make efficient;
     it might suffice instead to allow specifying the expected prior file length, and failing if it's wrong
 - get a directory listing (needed to recover from some write errors, if nothing else)
@@ -38,7 +38,7 @@ READER permissions:
 - but nothing else (in particular, no directory listings)
 
 Optional reader permissions:
-- directory listing for a finite list of specified full pathnames [not worth the trouble for now, purely an optim]
+- directory listing for a finite list of specified full pathnames [purely an optimization, so not worth the trouble for now]
 
 ==
 
