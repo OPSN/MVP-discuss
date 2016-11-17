@@ -54,7 +54,7 @@ Current thoughts about implementation: one 'grain' in Sandstorm.io, using one HT
 
 Everything else about OPSN is done by conventions followed by writers and readers.
 For example:
-- known filenames contain basic info, including OPSN directory format.
+- specific filenames (defined in the convention) contain basic info, especially the specific version of this convention being used by the OWNER
 - unguessable filenames are possible.
   - use them for writing to specific readers (or just to owner), unseen by other readers.
 - blob filenames include their hash, perhaps their length, and perhaps a file extension (not hashed, just hint about type).
