@@ -32,6 +32,7 @@ Optional:
 - directory listing includes file lengths [good]
 - directory listing can include file hashes [not worth the trouble for now]
 - keep logs of all operations [we'll do this if it's easy, for debugging if nothing else]
+- enforce total storage limit [not worth the trouble for now, since owner code can do it]
 
 ==
 
@@ -77,20 +78,19 @@ For example:
 - README.txt -- for people
 - index.html -- for anyone browsing there by accident (to the correct url, but using a conventional web browser), this tells them the right way to read the data here (or whatever about that you want the general public to know)
 - README-MACHINE.txt or maybe FORMAT.txt -- for programs -- gives machine-readable format description (at least format version) of entire directory
-- MANIFEST? INDEX? -- for reader programs -- list of pathnames readers need to know but would not guess (more or less)
+- MANIFEST? INDEX? -- for reader programs -- list of pathnames readers need to know but would not guess (more or less), and perhaps other slowly-changing global index-like info
+- CHANGES.txt -- some kind of summary of changes, other than to appendable files (so reader programs know when they have to reread all the toplevel info; might include an overall hash so readers can verify them all)
 
 - blob/\<hash> -- a long blob (maybe include length in name? plus optional file extension, which reader needs to know in advance)
   - we might need a way of splitting into subdirs if the main dir gets too long
     - it'd be nice if the underlying filesystem could do this (remain efficient for huge directories)
     - if it doesn't, maybe the storage server itself should?
 
-- news/\<date or uuid or nickname> -- an appendable "log" of changes to an OPSN graph, with conventions for which ones to read
+- news/\<date or uuid or nickname> -- an appendable "log" of changes to an OPSN graph, with further conventions to help readers know which files they need to reread and how often; this can include changes to very small mutable data, like weights and other metainfo, though we may decide later to optimize by making a more specific format for that
 
 - private/\<unguessable>/ -- subdirectory for blob/ and news/ in private channels
 
 - topic/\<name>/ -- subdirectory -- not needed except to optimize for readers who don't care about a large subtopic
-
-And more, not yet designed here (unless part of news?), for very small very mutable data, like weights and other metainfo
 
 ==
 
