@@ -10,7 +10,7 @@ Basic idea: basically just a filesystem, which the owner can write (with an effi
 
 ### Requirements
 
-See issue #xxx. Basically:
+See issue #3. Basically:
 - must be useable for the storage and public access part of an OPSN server
 - should make possible the most important aspects of the OPSN network (eg readers can copy all data of interest)
 - otherwise, should be as simple as possible.
