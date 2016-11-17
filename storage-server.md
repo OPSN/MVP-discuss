@@ -1,17 +1,19 @@
-### SYNTAX BUGS IN THIS FILE: 
-- the latter part of this file is not yet in markdown syntax.
-- @oresmus is not a link.
-- named subheaders would be useful.
-
-==
-
-This will contain our current thoughts about one simple way to define and implement an OPSN server,
+This documents our current thoughts about one simple way to define and implement an OPSN server,
 or more specifically a "pool storage server" or just "OPSN storage server",
 which does nothing but store stuff for one user, with read permissions to be granted as a unit (all or nothing).
 
 Basic idea: basically just a filesystem, which the owner can write (with an efficient append operation) and readers can only read.
 
 (The owner can effectively control everything about it, roughly like for a filesystem they own.)
+
+==
+
+### Requirements
+
+See issue #xxx. Basically:
+- must be useable for the storage and public access part of an OPSN server
+- should make possible the most important aspects of the OPSN network (eg readers can copy all data of interest)
+- otherwise, should be as simple as possible.
 
 ==
 
@@ -37,11 +39,13 @@ Optional:
 ==
 
 ### READER permissions:
+
+Needed:
 - read any file given its name
   (standard file extensions control its mimetype, as in a typical web server)
 - but nothing else (in particular, no directory listings)
 
-Optional reader permissions:
+Optional:
 - directory listing for a finite list of specified full pathnames [purely an optimization, so not worth the trouble for now]
 
 ==
@@ -52,7 +56,8 @@ Optional reader permissions:
   - note that GET from a web address doesn't imply the presence of an ordinarily-browseable website,
     though writers could produce one at the same url if desired (this server would not produce it itself, though)
 
-Current thoughts about implementation: one 'grain' in Sandstorm.io, using one HTTP API for both interfaces (OWNER and READER)
+### Likely implementation: 
+One 'grain' in Sandstorm.io, using one HTTP API for both interfaces (OWNER and READER)
 
 ==
 
@@ -75,7 +80,7 @@ For example:
 
 ### Possible specific convention:
 
-- README.txt -- for people
+- README.txt -- for people. Describes basic format of repo, but also purpose and license for this data. License info should ideally be machine-verifiable (so it might deserve its own file, LICENSE.txt, though it's not a code license.)
 - index.html -- for anyone browsing there by accident (to the correct url, but using a conventional web browser), this tells them the right way to read the data here (or whatever about that you want the general public to know)
 - README-MACHINE.txt or maybe FORMAT.txt -- for programs -- gives machine-readable format description (at least format version) of entire directory
 - MANIFEST? INDEX? -- for reader programs -- list of pathnames readers need to know but would not guess (more or less), and perhaps other slowly-changing global index-like info
