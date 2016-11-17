@@ -52,17 +52,19 @@ Current thoughts about implementation: one 'grain' in Sandstorm.io, using one HT
 
 ==
 
-Everything else about OPSN is done by conventions followed by writers and readers.
+Everything else about OPSN is done by conventions followed by writers and readers. 
+(That way, during development, we might often change the convention, but would rarely have to modify the server code.)
+
 For example:
 - specific filenames (defined in the convention) contain basic info, especially the specific version of this convention being used by the OWNER
-- unguessable filenames are possible.
-  - use them for writing to specific readers (or just to owner), unseen by other readers.
-- blob filenames include their hash, perhaps their length, and perhaps a file extension (not hashed, just hint about type).
-- Various filenames can be converted to related filenames with appendable or mutable metainfo or log info, etc.
-- Appendable files will be readable as a sequence of records.
+- unguessable filenames can be used when something should only be visible to a subset of readers (or just to the owner)
+- blob filenames include their hash, perhaps their length, and perhaps a file extension (not hashed, just a hint about their filetype). (The reader who wants to access one needs to know this name, not just its hash.)
+- Various filenames can be converted to related filenames in known ways
+  - for example, the related files (appendable or mutable) might contain metainfo or log info about the main file
+- Appendable files will be readable as a sequence of records (due to their internal format, according to the convention).
   We'll use them for:
-  - sets of small hashed blobs, as the writer classifies them.
-  - misc mutable-sets of exprs, as the writer desires (eg current state of various weights, perhaps never hashed).
+  - sets of small hashed blobs, divided into files however the owner wants to classify them (for reader convenience).
+  - miscellaneous mutable sets of "universal exprs", for any convenient purpose (eg current state of various weights, perhaps never hashed).
 
 ==
 
