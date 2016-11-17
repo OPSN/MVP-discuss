@@ -1,11 +1,11 @@
 # MVP-discuss
 A place to design a proof-of-concept implementation of Overlaid Personal Semantic Networks. (For what that is, see below.)
 
-To prove the concept, an implementation of it has to be useful -- it should be a "minimum viable product". 
+To prove the concept, an implementation of it has to be useful -- it should be a "minimum viable product" (MVP). 
 
 This repo is for discussing what that product might be and how to implement it. (The discussion is mostly in github issues, though when things seem more like "proposed internal documentation" they can be added as "source files" in this repo. Note that github doesn't list contributors on the repo as a whole if they only comment on issues, so there might be more contributors in reality than the ones listed for this repo.)
 
-There is not only one answer to that, so this repo is not for coding a product -- new coding projects will get their own repos. (The first coding project might well not end up being considered the "main" one, so we don't even want to try coding the first one in this repo.)
+There is not only one answer to that question (about the choice of MVP), so this repo is not for coding a product -- new coding projects will get their own repos. (The first coding project might well not end up being considered the "main" one, so we don't even want to try coding the first one in this repo.)
 
 ## Overlaid Personal Semantic Networks (OPSN)
 
