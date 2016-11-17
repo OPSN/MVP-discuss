@@ -80,7 +80,7 @@ For example:
 
 ### Possible specific convention:
 
-- README.txt -- for people. Describes basic format of repo, but also purpose and license for this data. License info should ideally be machine-verifiable (so it might deserve its own file, LICENSE.txt, though it's not a code license.)
+- README.txt -- for people. Says this is an OPSN repo (with useful references about that), but mainly assumes you know that and gives the purpose and license for the data in this repo (which is up to each owner). License info should ideally be machine-verifiable (so it might deserve its own file, eg LICENSE.txt, though it's not a code license.)
 - index.html -- for anyone browsing there by accident (to the correct url, but using a conventional web browser), this tells them the right way to read the data here (or whatever about that you want the general public to know)
 - README-MACHINE.txt or maybe FORMAT.txt -- for programs -- gives machine-readable format description (at least format version) of entire directory
 - MANIFEST? INDEX? -- for reader programs -- list of pathnames readers need to know but would not guess (more or less), and perhaps other slowly-changing global index-like info
