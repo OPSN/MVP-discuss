@@ -74,21 +74,21 @@ For example:
 
 ### Possible specific convention:
 
-- README.txt - for people
-- index.html - for anyone browsing there by accident, tells them what you want the public to know about the right way to read it
-- README-MACHINE.txt - for programs -- gives machine-readable format description (at least format version) of entire directory
-- MANIFEST? INDEX? - for reader programs - list of pathnames readers need to know but would not guess (more or less)
+- README.txt -- for people
+- index.html -- for anyone browsing there by accident (to the correct url, but using a conventional web browser), this tells them the right way to read the data here (or whatever about that you want the general public to know)
+- README-MACHINE.txt or maybe FORMAT.txt -- for programs -- gives machine-readable format description (at least format version) of entire directory
+- MANIFEST? INDEX? -- for reader programs -- list of pathnames readers need to know but would not guess (more or less)
 
-- blob/\<hash> - a long blob (maybe include length in name? plus optional file extension, which reader needs to know in advance)
-- we might need a way of splitting into subdirs if the main dir gets too long;
-  - it'd be nice if the underlying filesystem could do this (remain efficient for huge directories)
-  - if it doesn't, maybe the storage server itself should?
+- blob/\<hash> -- a long blob (maybe include length in name? plus optional file extension, which reader needs to know in advance)
+  - we might need a way of splitting into subdirs if the main dir gets too long
+    - it'd be nice if the underlying filesystem could do this (remain efficient for huge directories)
+    - if it doesn't, maybe the storage server itself should?
 
-- news/\<date or uuid or nickname> - an appendable "log" of changes to an OPSN graph, with conventions for which ones to read
+- news/\<date or uuid or nickname> -- an appendable "log" of changes to an OPSN graph, with conventions for which ones to read
 
-- private/\<unguessable>/ - subdirectory for blob/ and news/ in private channels
+- private/\<unguessable>/ -- subdirectory for blob/ and news/ in private channels
 
-- topic/\<name>/ - subdirectory -- not needed except to optimize for readers who don't care about a large subtopic
+- topic/\<name>/ -- subdirectory -- not needed except to optimize for readers who don't care about a large subtopic
 
 And more, not yet designed here (unless part of news?), for very small very mutable data, like weights and other metainfo
 
