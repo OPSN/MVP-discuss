@@ -43,10 +43,10 @@ Optional reader permissions:
 ==
 
 Nature of access:
-- OWNER needs an HTTP API
+- OWNER needs an HTTP API or equivalent (with a secret key for authorization, used over HTTPS)
 - READER could either use an HTTP API (ideal for some purposes), or just GET from a web address (ideal for other purposes), or both
-  - note that GET from web address doesn't imply the presence of an ordinarily-usefully-browseable website,
-    though writers could produce one there if desired (the simple server would not produce it, though)
+  - note that GET from a web address doesn't imply the presence of an ordinarily-browseable website,
+    though writers could produce one at the same url if desired (this server would not produce it itself, though)
 
 Current thoughts about implementation: one 'grain' in Sandstorm.io, using one HTTP API for both interfaces (OWNER and READER)
 
