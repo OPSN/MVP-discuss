@@ -1,8 +1,13 @@
-BUGS: this file is not yet in markdown syntax. Specific errors: @oresmus is not a link.
+SYNTAX BUGS IN THIS FILE: 
+- the latter part of this file is not yet in markdown syntax.
+- @oresmus is not a link.
+- named subheaders would be useful.
+
+Original author: @oresmus
 
 ==
 
-This will contain my (@oresmus) current thoughts about one simple way to define and implement an OPSN server,
+This will contain our current thoughts about one simple way to define and implement an OPSN server,
 or more specifically a "pool storage server" or just "OPSN storage server",
 which does nothing but store stuff for one user, with read permissions to be granted as a unit (all or nothing).
 
